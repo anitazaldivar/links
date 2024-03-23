@@ -3,13 +3,66 @@
   <head>
     <title>Link in Bio</title>
     <style>
+      /*To identify each element
+      * {
+        border: thin red solid;
+      }
+      */
+
       body {
         padding: 15px 20px 20px;
+        background-color: mediumturquoise;
+        display: flex;
+        justify-content: center;
+      }
+      
+      /*Default flex-direction is row*/
+      .items {
+        display: flex;
+        flex-direction: column;
+        gap: 30px; /*To add space between each child element*/
+        max-width: 640px;
+        flex-grow: 1; /*So that each child takes up all available space, to then center them (justify-content in body)*/
       }
 
+      .name {
+        color: aliceblue;
+        display: flex;
+        justify-content: center;
+      }
+
+      .banner {
+        display: flex;
+        justify-content: center;
+      }
+
+      .social-icons {
+        color:antiquewhite;
+        text-decoration: none;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .link {
+        background-color: honeydew;
+        display: flex;
+        align-items: center; /*vertically center*/
+        padding: 5px;
+      }
+
+      /*This selector targets only <a> elements descendants of class link*/
+      .link a {
+        color: cadetblue;
+        text-decoration: none;
+        text-align: center;
+        flex-grow: 1; /*Expand 'box' or container of the text to use all available space*/
+      }
+
+     /*object-fit: cover (object sized to maintain its aspect ratio while filling the element's entire content box) / contain (object scaled to maintain its aspect ratio while fitting eithin the element's entire content box) / fill (object copletely fill the box, streched to fit)*/
       .banner-image {
         width: 110px;
         height: 110px;
+        object-fit: cover;
         border-radius: 50%;
         border: solid rgb(247, 149, 188) 5px;
       }
@@ -23,43 +76,45 @@
   </head>
 
   <body>
-    <div class="banner">
-      <img src="https://images.unsplash.com/photo-1710067958448-9c17cd407df9?q=80&w=1978&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Profile picture" class="banner-image">
-    </div>
-    
-    <div class="name">
-      Anita Zaldivar
-    </div>
-    
-    <div class="social-icons">
-      <a href="https://github.com/anitazaldivar" target="_blank">
-        GitHub
-      </a>
+    <div class="items">
+      <div class="banner">
+        <img src="https://images.unsplash.com/photo-1710067958448-9c17cd407df9?q=80&w=1978&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Profile picture" class="banner-image">
+      </div>
       
-      <a href="https://www.linkedin.com/in/anita-zaldivar/" target="_blank">
-        LinkedIn
-      </a>
-    </div>
-    
-    <div class="link">
-      <img src="https://www.ycombinator.com/assets/ycdc/yc-og-image-0cfa80cac837d64d9b4f0705950000b66906ac032791376bd721f246fafcc7b4.png" alt="Logos"class="thumbnail">
-      <a target="_blank" href="http://paulgraham.com/startupideas.html">
-        How to Get Startup Ideas — Paul Graham
-      </a>
-    </div>
-    
-    <div class="link">
-      <img src="/thumbnails/typography.jpg" alt="Book with different typographies" class="thumbnail">
-      <a target="_blank" href="https://practicaltypography.com/typography-in-ten-minutes.html">
-        Typography in ten minutes — Matthew Butterick
-      </a>
-    </div>
-    
-    <div class="link">
-      <img src="https://media.newyorker.com/photos/59096d451c7a8e33fb38e4ca/16:9/w_1280,c_limit/071210_r16884_p646.jpg" alt="cables" class="thumbnail">
-      <a target="_blank" href="https://www.newyorker.com/magazine/2007/12/10/the-checklist/">
-        A Life-Saving Checklist — The New Yorker
-      </a>
+      <div class="name">
+        Anita Zaldivar
+      </div>
+      
+      <div class="social-icons">
+        <a href="https://github.com/anitazaldivar" target="_blank">
+          GitHub
+        </a>
+        
+        <a href="https://www.linkedin.com/in/anita-zaldivar/" target="_blank">
+          LinkedIn
+        </a>
+      </div>
+      
+      <div class="link">
+        <img src="https://www.ycombinator.com/assets/ycdc/yc-og-image-0cfa80cac837d64d9b4f0705950000b66906ac032791376bd721f246fafcc7b4.png" alt="Logos"class="thumbnail">
+        <a target="_blank" href="http://paulgraham.com/startupideas.html">
+          How to Get Startup Ideas — Paul Graham
+        </a>
+      </div>
+      
+      <div class="link">
+        <img src="/thumbnails/typography.jpg" alt="Book with different typographies" class="thumbnail">
+        <a target="_blank" href="https://practicaltypography.com/typography-in-ten-minutes.html">
+          Typography in ten minutes — Matthew Butterick
+        </a>
+      </div>
+      
+      <div class="link">
+        <img src="https://media.newyorker.com/photos/59096d451c7a8e33fb38e4ca/16:9/w_1280,c_limit/071210_r16884_p646.jpg" alt="cables" class="thumbnail">
+        <a target="_blank" href="https://www.newyorker.com/magazine/2007/12/10/the-checklist/">
+          A Life-Saving Checklist — The New Yorker
+        </a>
+      </div>
     </div>
   </body>
 </html>
